@@ -3,10 +3,10 @@ package produit;
 public class PizzaFromageStyleBrest extends Pizza {
 
 	public PizzaFromageStyleBrest() {
-		this.nom = "Pizza sauce style brest au fromage";
+		this.nom = "Pizza sauce style Brest et fromage";
 		this.pate = "PateB";
 		this.sauce = "SauceB";
-		this.garnitures.add("Parmigiano reggiano râpé");
+		this.garnitures.add("Parmigiano reggiano rape");
 	}
 }
 

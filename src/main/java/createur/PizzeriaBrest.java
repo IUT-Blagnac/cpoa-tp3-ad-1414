@@ -24,14 +24,14 @@ public class PizzeriaBrest extends Pizzeria {
 	}
 
 	private void cuire() {
-		System.out.println("Cuisson 25 minutes à 180 degrés");
+		System.out.println("Cuisson 25 minutes a 180 degres");
 	}
 
 	private void couper() {
-		System.out.println("Découpage en parts triangulaires");
+		System.out.println("Decoupage en parts triangulaires");
 	}
 
 	private void emballer() {
-		System.out.println("Emballage dans une boîte officielle");
+		System.out.println("Emballage dans une boite officielle");
 	}
 }
