@@ -3,8 +3,53 @@ apply plugin: 'java'
 jar {
     baseName = 'gs-gradle'
     version =  '0.1.0'
+    manifest {
+        attributes 'Main-Class': 'application.PizzaTestDrive'
+    }
+}
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.13'
+	compile 'junit:junit:4.13'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'java'
+    }
+  }
 }
 
 apply plugin: 'application'
 
 mainClassName = 'application.PizzaTestDrive'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
