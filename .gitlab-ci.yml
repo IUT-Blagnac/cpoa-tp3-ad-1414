@@ -1,0 +1,25 @@
+image: openjdk:11
+before_script:
+  - apt-get update
+  - apt-get -y install ant gradle
+  - gradle wrapper --gradle-version 5.1.1
+
+stages:
+  - gradle_build
+  - gradle_test
+
+gradle_build:
+  stage: gradle_build
+  script:
+    - ./gradlew assemble
+  artifacts:
+    paths:
+      - build/libs/*.jar
+    expire_in: 1 week
+  only:
+    - master
+
+gradle_test:
+  stage: gradle_test
+  script:
+    - ./gradlew check

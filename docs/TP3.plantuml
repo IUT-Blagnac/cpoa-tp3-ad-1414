@@ -1,0 +1,65 @@
+@startuml
+
+' package "application"
+class PizzaTestDrive
+' end package
+
+' package "createur"
+abstract Pizzeria
+class PizzeriaBrest
+class PizzeriaStrasbourg
+' end package
+
+' package "produit"
+abstract Pizza
+class PizzaFromageStyleBrest
+class PizzaFromageStyleStrasbourg
+' end package
+
+' content
+' -------
+
+PizzaTestDrive ..> Pizza
+Pizzeria ..> Pizza
+PizzeriaBrest --|> Pizzeria
+PizzeriaStrasbourg --|> Pizzeria
+PizzaFromageStyleBrest --|> Pizza
+PizzaFromageStyleStrasbourg --|> Pizza
+
+' PizzaTestDrive:
+PizzaTestDrive : void main(String[] args)
+
+' Pizzeria:
+Pizzeria : Pizza pizza
+Pizzeria : Pizza commanderPizza(String nomPizza)
+Pizzeria : void preparer()
+
+' PizzeriaBrest:
+PizzeriaBrest : Pizza commanderPizza(String nomPizza)
+PizzeriaBrest : private void cuire()
+PizzeriaBrest : private void couper()
+PizzeriaBrest : private void emballer()
+
+' PizzeriaStrasbourg:
+PizzeriaStrasbourg : Pizza commanderPizza(String nomPizza)
+PizzeriaStrasbourg : private void cuire()
+PizzeriaStrasbourg : private void couper()
+PizzeriaStrasbourg : private void emballer()
+
+' Pizza:
+Pizza : String nom
+Pizza : String pate
+Pizza : String sauce
+Pizza : ArrayList<String> garnitures
+Pizza : String getNom()
+Pizza : String getPate()
+Pizza : String getSauce()
+Pizza : ArrayList<String> getGarnitures()
+
+' PizzaFromageStyleBrest:
+PizzaFromageStyleBrest : PizzaFromageStyleBrest()
+
+' PizzaFromageStyleStrasbourg:
+PizzaFromageStyleStrasbourg : PizzaFromageStyleStrasbourg()
+
+@enduml
